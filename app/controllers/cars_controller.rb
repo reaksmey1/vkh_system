@@ -19,15 +19,24 @@ class CarsController < ApplicationController
 	end
 
 	def edit
-
+		@car = Car.find(params[:id])
 	end
 
 	def update
-
+		@car = Car.find(params[:id])
+		@car.update_attributes(car_params)
+		if @car.save
+	    redirect_to :action => :index
+	  else
+	    render 'edit'
+	  end
 	end
 
 	def destroy
-
+		@car = Car.find(params[:id])
+		@car.destroy
+		redirect_to :action => :index
+		flash.notice = "Car #{@car.plate_number} has been deleted"
 	end
 
 	private

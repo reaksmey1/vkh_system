@@ -23,10 +23,10 @@
 						<td>
 							<div>
 								<span style = "margin-right: 10px;">
-									<%= link_to "", cars_path, class: "glyphicon glyphicon-pencil" %>
+									<%= link_to "", edit_car_path(car), class: "glyphicon glyphicon-pencil" %>
 								</span>
 								<span style = "margin-right: 10px;">
-									<%= link_to "", cars_path, class: "glyphicon glyphicon-trash" %>
+									<%= link_to "", car_path(car), method: :delete, data: {confirm: "Are you sure want to delete this car?"}, class: "glyphicon glyphicon-trash" %>
 								</span>
 								<span style = "margin-right: 5px;">
 									<%= link_to "", cars_path, class: "glyphicon glyphicon-zoom-in" %>
