@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(@spare_part, layout: :horizontal ,label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
+  <%= f.text_field :code %>
+  <%= f.text_field :name %>
+  <%= f.collection_select :spare_part_type_id, SparePartType.all, :id, :name %>
+  <%= f.number_field	:amount_in_stock %>
+  <%= f.number_field	:based_price, :step => 'any' %>
+  <%= f.number_field	:selling_price, :step => 'any' %>
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

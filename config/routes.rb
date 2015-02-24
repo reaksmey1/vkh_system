@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :cars
+  resources :spare_parts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

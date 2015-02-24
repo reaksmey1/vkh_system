@@ -1,19 +1,8 @@
-<%= form_for @car, :html => {:class => "form-horizontal"} do |f| %>
-  <div class="form-group">
-    <%= f.label :plate_number, "Plate Number:", class: "col-xs-2 control-label" %>
-    <div class="col-md-3">
-      <%= f.text_field :plate_number, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :name, "Type:", class: "col-xs-2 control-label" %>
-    <div class="col-md-3">
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-xs-offset-2 col-xs-10">
-        <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-  </div> 
+<%= bootstrap_form_for(@car, layout: :horizontal ,label_col: "col-sm-2", control_col: "col-sm-3") do |f| %>
+  <%= f.text_field :plate_number %>
+  <%= f.text_field :name %>
+  <%= f.collection_select :type, CarType.all, :id, :name %>
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
