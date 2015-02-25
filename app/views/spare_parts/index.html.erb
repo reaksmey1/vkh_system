@@ -2,9 +2,10 @@
 	<div class="col-md-1"></div>
 	<div class="col-md-8">
 		<div class="nav">
-		<% if !@spare_parts.empty? %>
+		<%= form_tag spare_parts_path, :method => 'get', :class => "form-inline" do %>
 			<div class="navbar-nav navbar-left" style="margin-bottom: 10px;">
-				<input type="text" class="form-control" placeholder="Search ..." aria-describedby="sizing-addon1">
+				<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search ..." %>
+				<%= submit_tag "Search", :class => "btn btn-default" %>
 			</div>
 		<% end %>
 	  <div class="navbar-nav navbar-right" style="margin-right: 0px;">

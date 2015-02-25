@@ -1,6 +1,11 @@
 class SparePartsController < ApplicationController
 	def index
-		@spare_parts = SparePart.paginate(:page => params[:page], :per_page => 10)
+		if params[:search]
+			params_search = String(params[:search]).downcase
+			@spare_parts = SparePart.where("lower(name) like ? or code like ?", "%#{params[:search]}%", "%#{params[:search]}%").paginate(:page => params[:page], :per_page => 10)
+		else
+			@spare_parts = SparePart.paginate(:page => params[:page], :per_page => 10)
+		end
 	end
 
 	def new

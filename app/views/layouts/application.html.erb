@@ -35,20 +35,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active" style="padding-left: 20px; padding-right: 10px;"><a class="glyphicon glyphicon-usd" href="#"> Sell <span class="sr-only">(current)</span></a></li>
+        <li class="" style="padding-left: 20px; padding-right: 10px;"><a class="glyphicon glyphicon-usd" href="#"> Sell <span class="sr-only">(current)</span></a></li>
          <li class="nav-divider"></li>
         <li style="padding-left: 10px; padding-right: 10px;"><a class="glyphicon glyphicon-eye-open" href="#"> History </a></li>
         <li class="divider"></li>
-        <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="glyphicon glyphicon-folder-open"> Stock<span class="caret"></span></a>
+        <li class="dropdown <%= section_active("spare_parts")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Spare Parts <span class="caret"></span>'), spare_parts_path, :method => :get, :'data-toggle' => 'dropdown' %>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Car</a></li>
-            <li><a href="#">Spare part</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Manage Type</a></li>
+          </ul>
+        </li>
+        <li class="dropdown <%= section_active("cars")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Cars <span class="caret"></span>'), cars_path, :method => :get, :'data-toggle' => 'dropdown' %>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Manage Type</a></li>
           </ul>
         </li>
         <li class="divider-vertical"></li>
