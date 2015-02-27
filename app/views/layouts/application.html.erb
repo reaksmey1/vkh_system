@@ -42,7 +42,7 @@
             <li><a href="#">Manage Type</a></li>
           </ul>
         </li>
-        <li class="dropdown <%= section_active("cars")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Cars <span class="caret"></span>'), cars_path, :method => :get, :'data-toggle' => 'dropdown' %>
+        <li class="dropdown <%= section_active("cars")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Cars <span class="caret"></span>'), cars_path, :method => :get, :'data-toggle' => 'dropdown', :'data-hover' => 'dropdown', :'data-delay'=>"1000", :'data-close-others'=>"false" %>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Manage Type</a></li>
           </ul>
