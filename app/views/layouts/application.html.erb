@@ -39,7 +39,7 @@
         <li class="divider"></li>
         <li class="dropdown <%= section_active("spare_parts")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Spare Parts <span class="caret"></span>'), spare_parts_path, :method => :get, :'data-toggle' => 'dropdown' %>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Manage Type</a></li>
+            <li><%= link_to "Manage Type", spare_part_types_path %></li>
           </ul>
         </li>
         <li class="dropdown <%= section_active("cars")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Cars <span class="caret"></span>'), cars_path, :method => :get, :'data-toggle' => 'dropdown', :'data-hover' => 'dropdown', :'data-delay'=>"1000", :'data-close-others'=>"false" %>
