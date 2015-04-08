@@ -12,10 +12,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cars
+  resources :cars do
+    member do
+      post 'add_more_detail'
+    end
+  end
   resources :spare_parts
   resources :spare_part_types
   resources :car_histories
+  resources :car_repairing_quotes
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

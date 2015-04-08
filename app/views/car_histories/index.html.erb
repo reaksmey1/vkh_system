@@ -1,38 +1,38 @@
 <div style="float: left; width: 30%;">
 	<div class="car-history">
-		<div class="title"> Record new car history </div>
-		<%= bootstrap_form_for(@car_history, layout: :horizontal) do |f| %>
-		  <%= f.text_field :car_id %>
-		  <%= f.text_area :problem %>
+		<%= params[:car_plate] %>
+		<%= bootstrap_form_for(@car, url: new_car_repairing_quote_path, method: 'GET', layout: :horizontal) do |f| %>
+		  <%= f.collection_select :id, Car.all, :id, :plate_number, :label => "លេខ", :selected => params[:car_id] ? params[:car_id][0] : nil %>
+		  <%= f.text_field :entry_date, :id => "datetimepicker", :label => "ចូល", :value => params[:car_id] ? params[:car_id][1] : nil %>
+		  <%= f.text_field :kilo_metre, :label => "គិឡូ", :value => params[:car_id] ? params[:car_id][2] : nil %>
+		  <%= f.submit "បន្តែមពត៍មាន" %> 
 		<% end %>
 	</div>
 
 	<div class="input-spare-part">
-		<div class="title"> Spare Part </div>
 		<%= bootstrap_form_for(@spare_part, layout: :horizontal) do |f| %>
-		  <%= f.text_field :code %>
-		  <%= f.text_field :name %>
+		  <%= f.text_field :code, :label => "កូដ" %>
 		<% end %>
 	</div>
 
 	<div class="calculation">
-		<b>Total:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" name="total" id="total" /> <br/><br/>
-		<b>Recieved:</b> <input type="text" id="recieved" name="recieved" /> <br/> <br/>
-		<b>Return:&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" id="return" name="return" /> <br/> 
+		<b>សរុប:	&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" name="total" id="total" /> <br/><br/>
+		<b>ទទួល:&nbsp;&nbsp;	</b> <input type="text" id="recieved" name="recieved" /> <br/> <br/>
+		<b>អាប់:&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" id="return" name="return" /> <br/> 
 
 	</div>
 </div>
 
 <div class="spare-part-detail">
 	<div class="panel panel-default">
-				<table class="table table-striped table-hover" id="spare_part_detail">
-					<th style="width: 15%"> Code </th>
-					<th style="width: 20%"> Name </th>
-					<th style="width: 15%"> Amount </th>
-					<th style="width: 20%"> Unit Price </th>
-					<th style="width: 20%"> Total </th>
-					<th style="width: 10%"> </th>
-				</table>
-			</div>
+		<table class="table table-striped table-hover" id="spare_part_detail">
+			<th style="width: 15%"> កូដ </th>
+			<th style="width: 20%"> ឈ្មោះ </th>
+			<th style="width: 15%"> ចំនួន </th>
+			<th style="width: 20%"> តំលៃរាយ </th>
+			<th style="width: 20%"> តំលៃសរុប </th>
+			<th style="width: 10%"> </th>
+		</table>
+	</div>
 </div>
 
