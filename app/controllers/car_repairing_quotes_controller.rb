@@ -33,8 +33,12 @@ class CarRepairingQuotesController < ApplicationController
 				problem_id = key
 				status_id = value[:status_ids][0]
 				quote_status = CarRepairingQuoteStatus.find_by_car_id_and_car_repairing_quote_id(@car_history.id, problem_id)
-				quote_status.status = status_id
-				quote_status.save
+				if quote_status
+					quote_status.status = status_id 
+					quote_status.save
+				else
+					CarRepairingQuoteStatus.create(:car_id => @car_history.id, :car_repairing_quote_id => problem_id, :status => status_id)
+				end
 				# CarRepairingQuoteStatus.create(:car_id => @car_history.id, :car_repairing_quote_id => problem_id, :status => status_id)
 			end
 		end
