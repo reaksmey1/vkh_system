@@ -2,23 +2,23 @@
 	<div class="car-history">
 		<%= params[:car_plate] %>
 		<%= bootstrap_form_for(@car, url: new_car_repairing_quote_path, method: 'GET', layout: :horizontal) do |f| %>
-		  <%= f.collection_select :id, Car.all, :id, :plate_number, :label => "លេខ", :selected => params[:car_id] ? params[:car_id][0] : nil %>
-		  <%= f.text_field :entry_date, :id => "datetimepicker", :label => "ចូល", :value => params[:car_id] ? params[:car_id][1] : nil %>
-		  <%= f.text_field :kilo_metre, :label => "គិឡូ", :value => params[:car_id] ? params[:car_id][2] : nil %>
-		  <%= f.submit "បន្តែមពត៍មាន" %> 
+		  <%= f.collection_select :id, Car.all, :id, :plate_number, :label_col => "col-sm-3", :control_col => "col-sm-9", :label => "ផ្លាកលេខ",  :selected => params[:car_id] ? params[:car_id][0] : nil %>
+		  <%= f.text_field :entry_date, :id => "datetimepicker", :label_col => "col-sm-3", :control_col => "col-sm-9", :label => "ថ្ងៃចូល", :value => params[:car_id] ? params[:car_id][1] : nil %>
+		  <%= f.text_field :kilo_metre,:label_col => "col-sm-3", :control_col => "col-sm-9", :label => "គិឡូ/ម៉ាយ", :value => params[:car_id] ? params[:car_id][2] : nil %>
+		  <%= f.submit "បន្តែមពត៍មាន", :style => "margin-left: 90px;" %> 
 		<% end %>
 	</div>
 
 	<div class="input-spare-part">
 		<%= bootstrap_form_for(@spare_part, layout: :horizontal) do |f| %>
-		  <%= f.text_field :code, :label => "កូដ" %>
+		  <%= f.text_field :code, :label_col => "col-sm-3", :control_col => "col-sm-9", :label => "លេខកូដ" %>
 		<% end %>
 	</div>
 
 	<div class="calculation">
-		<b>សរុប:	&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" name="total" id="total" /> <br/><br/>
-		<b>ទទួល:&nbsp;&nbsp;	</b> <input type="text" id="recieved" name="recieved" /> <br/> <br/>
-		<b>អាប់:&nbsp;&nbsp;&nbsp;&nbsp;</b> <input type="text" id="return" name="return" /> <br/> 
+		<b style="margin-right: 25px; margin-left: 10px;">លុយសរុប</b> <input type="text" name="total" id="total" /> <br/><br/>
+		<b style="margin-right: 20px; margin-left: 10px;">លុយទទួល</b> <input type="text" id="recieved" name="recieved" /> <br/> <br/>
+		<b style="margin-right: 30px; margin-left: 10px;">លុយអាប់</b> <input type="text" id="return" name="return" /> <br/> 
 
 	</div>
 </div>

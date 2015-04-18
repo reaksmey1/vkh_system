@@ -8,6 +8,10 @@
 	padding-bottom: 20px;
 }
 
+.select1 {
+	width: 100px;
+}
+
 .title {
 	text-decoration: underline;
 	font-weight: bold;
