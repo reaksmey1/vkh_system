@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   end
   resources :spare_parts
   resources :spare_part_types
-  resources :car_histories
+  resources :car_histories do
+    member do
+      post 'print'
+    end
+  end
   resources :car_repairing_quotes
 
   # Example of regular route:

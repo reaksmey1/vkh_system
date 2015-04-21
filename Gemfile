@@ -39,6 +39,7 @@ gem 'will_paginate-bootstrap'
 gem 'rails_12factor', group: :production
 gem 'bootstrap_form'
 gem 'jquery-datetimepicker-rails'
+gem "payday"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

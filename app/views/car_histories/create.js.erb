@@ -17,7 +17,7 @@ function updateReturnMoney() {
 
 // $("#car_history_car_id").val("<%= @plate_number %>")
 
-$('#spare_part_detail > tbody:last').append("<tr><td> <%= @spare_part.code %> </td><td> <%= @spare_part.name %> </td> <td> <input class='amount' type='text' value='<%= @amount %>'/> </td> <td> <input class='based_price' type='text' value='<%= @spare_part.selling_price %>'/> </td><td> <input class='total_price' type='text' value='<%= @total %>'/> </td><td class='delete_item'><b style='color: red; cursor: pointer;'>X</b></td></tr>");
+$('#spare_part_detail > tbody:last').append("<tr><td class='code'> <%= @spare_part.code %> </td><td class='spare_part'> <%= @spare_part.name %> </td> <td> <input class='amount' type='text' value='<%= @amount %>'/> </td> <td> <input class='based_price' type='text' value='<%= @spare_part.selling_price %>'/> </td><td> <input class='total_price' type='text' value='<%= @total %>'/> </td><td class='delete_item'><b style='color: red; cursor: pointer;'>X</b></td></tr>");
 
 $(".delete_item").click(function(){
 	$(this).parents('tr').remove();

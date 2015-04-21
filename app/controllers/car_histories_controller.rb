@@ -17,4 +17,22 @@ class CarHistoriesController < ApplicationController
 			format.js
 		end
 	end
+
+	def print
+		if params[:_json].count > 0
+			params[:_json].each do |el| 
+				SellReport.create!(:car_id => params[:id],
+													 :spare_part_id => SparePart.find_by_code(el[:code].delete(" ")).id,
+													 :unit => el[:amount],
+													 :selling_price => el[:unit_price],
+													 :total_price => el[:total_price],
+													 :recieved => el[:recieved],
+													 :sub_total => el[:sub_total],
+													 :return => el[:return_money],
+													 :status => "Paid",
+													)
+			end
+		end
+		true
+	end
 end
