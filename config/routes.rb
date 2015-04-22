@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     end
   end
   resources :car_repairing_quotes
+  resources :historical_reports
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

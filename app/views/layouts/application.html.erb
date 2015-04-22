@@ -35,7 +35,7 @@
       <ul class="nav navbar-nav">
         <li class=<%= section_active("car_histories")  %> style="padding-left: 20px; padding-right: 10px;"> <%= link_to raw('<i class="glyphicon glyphicon-usd" style="margin-right: 5px;"></i> Sell '), car_histories_path, :method => :get %> </li>
          <li class="nav-divider"></li>
-        <li style="padding-left: 10px; padding-right: 10px;"><a class="glyphicon glyphicon-eye-open" href="#"> History </a></li>
+        <li class=<%= section_active("historical_reports")  %> style="padding-left: 20px; padding-right: 10px;"> <%= link_to raw('<i class="glyphicon glyphicon-eye-open" style="margin-right: 5px;"></i>  History '), historical_reports_path, :method => :get %> </li>
         <li class="divider"></li>
         <li class="dropdown <%= section_active("spare_parts")  %>"> <%= link_to raw('<i class="glyphicon glyphicon-folder-open" style="margin-right: 5px;"></i> Spare Parts <span class="caret"></span>'), spare_parts_path, :method => :get, :'data-toggle' => 'dropdown' %>
           <ul class="dropdown-menu" role="menu">
