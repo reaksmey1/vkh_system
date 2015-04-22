@@ -31,7 +31,9 @@ $(document).ready(function() {
 		      var sub_total = $("#total").val();
 		      var recieved = $("#recieved").val();
 		      var return_money = $("#return").val();
-		      sell_data.push({code: code, name: name, amount: amount, unit_price: unit_price, total_price: total_price, sub_total: sub_total, recieved: recieved, return_money: return_money})
+		      var car_id = $("#car_history_id").val();
+		      var entry_date = $("#datetimepicker").val();
+		      sell_data.push({code: code, name: name, amount: amount, unit_price: unit_price, total_price: total_price, sub_total: sub_total, recieved: recieved, return_money: return_money, car_id: car_id, entry_date: entry_date})
 		    }
 		 });
 	  $.ajax({
