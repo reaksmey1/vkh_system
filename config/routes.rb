@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'car_histories#index'
   resources :users do
     member do
       put 'update_password'
@@ -25,7 +25,12 @@ Rails.application.routes.draw do
     end
   end
   resources :car_repairing_quotes
-  resources :historical_reports
+  resources :alerts
+  resources :historical_reports do 
+    member do
+      get 'quote'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

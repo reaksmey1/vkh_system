@@ -48,7 +48,7 @@
           </ul>
         </li>
         <li class="divider-vertical"></li>
-        <li style="padding-left: 10px; padding-right: 10px;"><a class="glyphicon glyphicon-bell" href="#"> Alert <span class="badge">14</span> </a></li>
+        <li class=<%= section_active("alerts")  %> style="padding-left: 10px; padding-right: 10px;"> <%= link_to raw('<i class="glyphicon glyphicon-bell" style="margin-right: 5px;"></i>  Alert <span class="badge">'"#{SparePart.where('amount_in_stock <= ?', 20).count}"'</span> '), alerts_path, :method => :get %> </li>
         <li class="divider-vertical"></li>
         <li><a class="glyphicon glyphicon-user" href="#"> User </a></li>
       </ul>

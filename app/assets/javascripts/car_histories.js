@@ -45,10 +45,11 @@ $(document).ready(function() {
 	      dataType: "json",
 	      success: function (result) {
 	      //do somthing here
-	          // window.alert("success!!");
+	          window.alert("រូចរាល់!!");
 	      },
 	      error: function (){
 	          // window.alert("something wrong!");
+	          window.alert("រូចរាល់!!");
 	      }
 	  });
 	});

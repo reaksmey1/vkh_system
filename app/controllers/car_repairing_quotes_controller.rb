@@ -42,6 +42,5 @@ class CarRepairingQuotesController < ApplicationController
 				# CarRepairingQuoteStatus.create(:car_id => @car_history.id, :car_repairing_quote_id => problem_id, :status => status_id)
 			end
 		end
-		redirect_to :controller => 'car_histories', :action => 'index', :car_id => [@car.id, @car_history.entry_date, @car_history.kilo_metre]
 	end
 end

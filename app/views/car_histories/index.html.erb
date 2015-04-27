@@ -1,7 +1,7 @@
 <div style="float: left; width: 30%;">
 	<div class="car-history">
 		<%= params[:car_plate] %>
-		<%= bootstrap_form_for(@car, url: new_car_repairing_quote_path, method: 'GET', layout: :horizontal) do |f| %>
+		<%= bootstrap_form_for(@car, url: new_car_repairing_quote_path, method: 'GET', layout: :horizontal, :html => {:target => '_blank'}) do |f| %>
 		  <%= f.collection_select :id, Car.all, :id, :plate_number, :label_col => "col-sm-3", :control_col => "col-sm-9", :label => "ផ្លាកលេខ",  :selected => params[:car_id] ? params[:car_id][0] : nil %>
 		  <%= f.text_field :entry_date, :id => "datetimepicker", :label_col => "col-sm-3", :control_col => "col-sm-9", :label => "ថ្ងៃចូល", :value => params[:car_id] ? params[:car_id][1] : nil %>
 		  <%= f.text_field :kilo_metre,:label_col => "col-sm-3", :control_col => "col-sm-9", :label => "គិឡូ/ម៉ាយ", :value => params[:car_id] ? params[:car_id][2] : nil %>
@@ -16,10 +16,14 @@
 	</div>
 
 	<div class="calculation">
+		<div style="float: left;">
 		<b style="margin-right: 25px; margin-left: 10px;">លុយសរុប</b> <input type="text" name="total" id="total" /> <br/><br/>
 		<b style="margin-right: 20px; margin-left: 10px;">លុយទទួល</b> <input type="text" id="recieved" name="recieved" /> <br/> <br/>
-		<b style="margin-right: 30px; margin-left: 10px;">លុយអាប់</b> <input type="text" id="return" name="return" /> <br/> 
-		<input type="button" id="print" />
+		<b style="margin-right: 30px; margin-left: 10px;">លុយអាប់</b> <input type="text" id="return" name="return" />
+		</div>
+		<div style="float: right;">
+		<input type="button" value="PRINT" id="print" style="width: 55px; height: 50px; margin-top: 30px;" />
+		</div>
 
 	</div>
 </div>

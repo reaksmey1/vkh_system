@@ -35,6 +35,9 @@ class CarHistoriesController < ApplicationController
 													 :status => "Paid",
 													 :car_history_id => car_history.id
 													)
+				spare_part = SparePart.find_by_code(el[:code].delete(" "))
+				spare_part.amount_in_stock = spare_part.amount_in_stock.to_f - el[:amount].to_f
+				spare_part.save!
 			end
 			# invoice = Payday::Invoice.new(:invoice_number => 12)
 			# invoice.line_items << Payday::LineItem.new(:price => 20, :quantity => 5, :description => "Pants")
